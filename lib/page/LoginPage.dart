@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:animate_do/animate_do.dart';
-import 'package:medical_app/dashboard/dashboardScreen.dart';
+
+import '../screens/dashboardScreen.dart';
 // import 'package:medical_app/page/SignupPage.dart';
 
 class LoginPage extends StatefulWidget {

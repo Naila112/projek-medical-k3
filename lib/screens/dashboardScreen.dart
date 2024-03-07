@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:medical_app/dashboard/iconsScreen.dart';
+import 'package:medical_app/input/makeIcons.dart';
 import 'package:medical_app/input/makeDate.dart';
 import 'package:medical_app/input/makeGreeting.dart';
 
 class DashboardScreen extends StatelessWidget {
-  const DashboardScreen({Key? key});
+  const DashboardScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,14 +17,18 @@ class DashboardScreen extends StatelessWidget {
           children: [
             buildNotificationIcons(context), // Memuat icon notifikasi dan menu
             buildGreetingBox(context, ''), // Memuat sapaan
-            buildDate(context), // Memuat bulan dan tanggal
-            buildDayRow(context), // Memuat tanggal dan hari
+            buildDateSection(context), // Memuat tanggal dan hari
             buildYellowBox(), // Memuat box kuning
             buildContentBox(), // Memuat box putih dengan konten di dalamnya
           ],
         ),
       ),
     );
+  }
+
+  // Memuat box kuning
+  Widget buildYellowBox() {
+    return const SizedBox(height: 20);
   }
 
   // Memuat box putih dengan konten di dalamnya
@@ -107,7 +111,7 @@ class DashboardScreen extends StatelessWidget {
                   child: const Padding(
                     padding: EdgeInsets.only(right: 10.0),
                     child: Icon(
-                      Icons.check_circle_rounded,
+                      Icons.check_circle_sharp,
                       size: 47,
                       color: Color(0xFFFDD835), // Warna ikon
                     ),

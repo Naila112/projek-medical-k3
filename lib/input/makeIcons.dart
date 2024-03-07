@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:medical_app/dashboard/notificationScreen.dart';
-import 'package:medical_app/dashboard/settingScreen.dart';
+import 'package:medical_app/screens/notificationScreen.dart';
+import 'package:medical_app/screens/settingScreen.dart';
 
 import '../nav/navigator.dart';
 
@@ -21,7 +21,7 @@ Widget buildNotificationIcons(BuildContext context) {
         // Icon menu
         GestureDetector(
           onTap: () {
-            PageNavigator.slideToPage(context, const SettingScreen());
+            PageNavigator.fadeToPage(context, const SettingScreen());
           },
           child: buildNotificationIcon(Icons.menu_rounded),
         ),
