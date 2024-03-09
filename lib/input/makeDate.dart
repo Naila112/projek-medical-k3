@@ -1,18 +1,23 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:medical_app/screens/calenderScreen.dart';
 
 Widget buildDateSection(BuildContext context) {
   DateTime now = DateTime.now();
-  DateTime firstDayOfMonth = DateTime(now.year, now.month, 1);
+  DateTime firstDayOfMonth =
+      DateTime(now.year, now.month, now.day - now.weekday + 1);
+  int daysInMonth = DateTime(now.year, now.month + 1, 0).day;
   List<String> daysInEnglish = [];
-  for (int i = 0; i < 7; i++) {
-    daysInEnglish
-        .add(DateFormat('E').format(firstDayOfMonth.add(Duration(days: i))));
+  List<int> daysOfMonth = [];
+  for (int i = 7; i < daysInMonth; i++) {
+    daysOfMonth.add(i + 1);
+    DateTime currentDay = firstDayOfMonth.add(Duration(days: i));
+    daysInEnglish.add(DateFormat('E').format(currentDay));
   }
 
   return Padding(
-    padding: const EdgeInsets.fromLTRB(50, 0, 40, 0),
+    padding: const EdgeInsets.fromLTRB(40, 0, 40, 0),
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -27,8 +32,8 @@ Widget buildDateSection(BuildContext context) {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            GestureDetector(
-              onTap: () {
+            CupertinoButton(
+              onPressed: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
@@ -47,12 +52,11 @@ Widget buildDateSection(BuildContext context) {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            for (int i = 0; i < 7; i++)
+            for (int i = 1; i < 8; i++)
               buildDayBox(
                 firstDayOfMonth.add(Duration(days: i)).day,
                 daysInEnglish[i],
-                firstDayOfMonth.add(Duration(days: i)).day == now.day &&
-                    now.month == firstDayOfMonth.month,
+                firstDayOfMonth.add(Duration(days: i)).day == now.day,
                 context,
               ),
           ],

@@ -17,7 +17,7 @@ Widget buildGreetingBox(BuildContext context, String username) {
 
   // Kembalikan widget yang akan ditampilkan
   return Container(
-    margin: const EdgeInsets.symmetric(horizontal: 50, vertical: 40),
+    margin: const EdgeInsets.symmetric(horizontal: 40, vertical: 10),
     child: Row(
       children: [
         Text(

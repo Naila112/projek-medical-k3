@@ -3,6 +3,8 @@ import 'package:medical_app/input/makeIcons.dart';
 import 'package:medical_app/input/makeDate.dart';
 import 'package:medical_app/input/makeGreeting.dart';
 
+import 'upcomingScreen.dart';
+
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
 
@@ -19,7 +21,8 @@ class DashboardScreen extends StatelessWidget {
             buildGreetingBox(context, ''), // Memuat sapaan
             buildDateSection(context), // Memuat tanggal dan hari
             buildYellowBox(), // Memuat box kuning
-            buildContentBox(), // Memuat box putih dengan konten di dalamnya
+            buildContentBox(
+                context), // Memuat box putih dengan konten di dalamnya
           ],
         ),
       ),
@@ -32,7 +35,7 @@ class DashboardScreen extends StatelessWidget {
   }
 
   // Memuat box putih dengan konten di dalamnya
-  Widget buildContentBox() {
+  Widget buildContentBox(context) {
     return Container(
       width: double.infinity,
       height: 500,
@@ -59,14 +62,14 @@ class DashboardScreen extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(20),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withOpacity(0.3),
-                  spreadRadius: 1,
-                  blurRadius: 10,
-                  offset: const Offset(3, 5),
-                ),
-              ],
+              // boxShadow: [
+              //   BoxShadow(
+              //     color: Colors.black.withOpacity(0.3),
+              //     spreadRadius: 1,
+              //     blurRadius: 10,
+              //     offset: const Offset(3, 5),
+              //   ),
+              // ],
             ),
             child: Row(
               children: [
@@ -97,52 +100,12 @@ class DashboardScreen extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(width: 10),
-                Container(
-                  padding: const EdgeInsets.only(left: 10.0),
-                  decoration: const BoxDecoration(
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black,
-                        spreadRadius: -2,
-                      ),
-                    ],
-                    shape: BoxShape.circle,
-                  ),
-                  child: const Padding(
-                    padding: EdgeInsets.only(right: 10.0),
-                    child: Icon(
-                      Icons.check_circle_sharp,
-                      size: 47,
-                      color: Color(0xFFFDD835), // Warna ikon
-                    ),
-                  ),
-                ),
+                buildCheckCircleButton(context), // Memuat tombol check
               ],
             ),
           ),
-          // Memuat konten lain di dalam box putih
-          const SizedBox(height: 10),
-          Container(
-            margin: const EdgeInsets.all(30),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(20),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withOpacity(0.3),
-                  spreadRadius: 1,
-                  blurRadius: 10,
-                  offset: const Offset(3, 5),
-                ),
-              ],
-            ),
-            child: const Center(
-              child: Text(
-                'Another Content Inside Box',
-                style: TextStyle(fontSize: 24),
-              ),
-            ),
-          ),
+          // Upcoming Appointments
+          const UpcomingAppointments()
         ],
       ),
     );
