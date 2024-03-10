@@ -24,6 +24,7 @@ class PageNavigator {
       ),
     );
   }
+// PageNavigator.slideToPage(context, const CalendarScreen());
 
   // Transisi Fade
   static void fadeToPage(BuildContext context, Widget page) {
@@ -40,6 +41,7 @@ class PageNavigator {
       ),
     );
   }
+// PageNavigator.fadeToPage(context, const CalendarScreen());
 
   // Transisi Scale
   static void scaleToPage(BuildContext context, Widget page) {
@@ -56,6 +58,7 @@ class PageNavigator {
       ),
     );
   }
+// PageNavigator.scaleToPage(context, const CalendarScreen());
 
   // Transisi Rotate
   static void rotateToPage(BuildContext context, Widget page) {
@@ -72,6 +75,7 @@ class PageNavigator {
       ),
     );
   }
+// PageNavigator.rotateToPage(context, const CalendarScreen());
 
   // Transisi Slide Right
   static void slideRightToPage(BuildContext context, Widget page) {
@@ -91,6 +95,7 @@ class PageNavigator {
       ),
     );
   }
+// PageNavigator.slideRightToPage(context, const CalendarScreen());
 
   // Transisi Slide Left
   static void slideLeftToPage(BuildContext context, Widget page) {
@@ -110,6 +115,7 @@ class PageNavigator {
       ),
     );
   }
+// PageNavigator.slideLeftToPage(context, const CalendarScreen());
 
   // Transisi Bounce
   static void bounceToPage(BuildContext context, Widget page) {
@@ -128,26 +134,4 @@ class PageNavigator {
     );
   }
 }
-
-
-// Untuk transisi slide
-// PageNavigator.slideToPage(context, const CalendarScreen());
-
-// Untuk transisi fade
-// PageNavigator.fadeToPage(context, const CalendarScreen());
-
-// Untuk transisi scale
-// PageNavigator.scaleToPage(context, const CalendarScreen());
-
-// Transisi Rotate
-// PageNavigator.rotateToPage(context, const CalendarScreen());
-
-// Transisi Slide Right
-// PageNavigator.slideRightToPage(context, const CalendarScreen());
-
-// Transisi Slide Left
-// PageNavigator.slideLeftToPage(context, const CalendarScreen());
-
-// Transisi Bounce
 // PageNavigator.bounceToPage(context, const CalendarScreen());
-

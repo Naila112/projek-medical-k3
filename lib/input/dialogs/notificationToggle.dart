@@ -15,7 +15,7 @@ class _NotificationToggleState extends State<NotificationToggle> {
     return IconButton(
       icon: Icon(
         _notificationOn ? Icons.toggle_on_outlined : Icons.toggle_off_outlined,
-        color: _notificationOn ? Colors.blue : Colors.grey,
+        color: _notificationOn ? Colors.blue : Colors.black87,
         size: 30,
       ),
       onPressed: () {

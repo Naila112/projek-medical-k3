@@ -1,6 +1,8 @@
 // Memuat text account
 import 'package:flutter/material.dart';
 
+import '../../../input/makeIcons.dart';
+
 Widget buildTextSettings(context) {
   return Container(
     margin: const EdgeInsets.symmetric(horizontal: 50, vertical: 0),
@@ -24,19 +26,19 @@ Widget buildTextSettings(context) {
 Widget buildHistory(BuildContext context) {
   return Container(
     width: double.infinity,
-    margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+    margin: const EdgeInsets.symmetric(vertical: 0, horizontal: 20),
     padding: const EdgeInsets.all(15),
     decoration: BoxDecoration(
       color: Colors.white,
       borderRadius: BorderRadius.circular(20),
-      boxShadow: [
-        BoxShadow(
-          color: Colors.grey.withOpacity(0.5),
-          spreadRadius: 2,
-          blurRadius: 5,
-          offset: const Offset(0, 3),
-        ),
-      ],
+      // boxShadow: [
+      //   BoxShadow(
+      //     color: Colors.grey.withOpacity(0.5),
+      //     spreadRadius: 2,
+      //     blurRadius: 5,
+      //     offset: const Offset(0, 3),
+      //   ),
+      // ],
     ),
     child: Row(
       crossAxisAlignment: CrossAxisAlignment.center,
@@ -44,17 +46,17 @@ Widget buildHistory(BuildContext context) {
         Container(
           width: 40,
           height: 40,
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            color: Colors.grey[200], // Ganti warna sesuai kebutuhan
-          ),
+          // decoration: BoxDecoration(
+          //   shape: BoxShape.circle,
+          //   color: Colors.grey[200], // Ganti warna sesuai kebutuhan
+          // ),
           child: const Icon(
             Icons.history_rounded,
-            color: Colors.grey,
-            size: 30,
+            color: Colors.black87,
+            size: 25,
           ),
         ),
-        const SizedBox(width: 20),
+        // const SizedBox(width: 10),
         const Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -70,7 +72,11 @@ Widget buildHistory(BuildContext context) {
         ),
         const Spacer(),
         IconButton(
-          icon: const Icon(Icons.arrow_forward_ios_rounded, color: Colors.grey),
+          icon: const Icon(
+            Icons.arrow_forward_ios_rounded,
+            color: Colors.black87,
+            size: 25,
+          ),
           onPressed: () {
             // Tambahkan logika untuk mengedit informasi akun
           },

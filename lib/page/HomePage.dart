@@ -1,7 +1,7 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'LoginPage.dart';
-// import 'SignupPage.dart';
+import 'SignupPage.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -94,48 +94,48 @@ class HomePage extends StatelessWidget {
                     const SizedBox(
                       height: 20,
                     ),
-                    // FadeInUp(
-                    //   duration: const Duration(milliseconds: 1600),
-                    //   child: Container(
-                    //     padding: const EdgeInsets.only(top: 3, left: 3),
-                    //     decoration: BoxDecoration(
-                    //       borderRadius: BorderRadius.circular(50),
-                    //       border: const Border(
-                    //         bottom: BorderSide(color: Colors.black),
-                    //         top: BorderSide(color: Colors.black),
-                    //         left: BorderSide(color: Colors.black),
-                    //         right: BorderSide(*color: Colors.black),
-                    //       ),
-                    //     ),
-                    //         child: MaterialButton(
-                    //           minWidth: double.infinity,
-                    //           height: 60,
-                    //           onPressed: () {
-                    //             Navigator.push(
-                    //               context,
-                    //               MaterialPageRoute(
-                    //                 builder: (context) => const SignupPage(),
-                    //               ),
-                    //             );
-                    //           },
-                    //           color: Colors.yellow[600],
-                    //           elevation: 0,
-                    //           shape: RoundedRectangleBorder(
-                    //             borderRadius: BorderRadius.circular(50),
-                    //           ),
-                    //           child: const Text(
-                    //             "Sign up",
-                    //             style: TextStyle(
-                    //               fontWeight: FontWeight.w600,
-                    //               fontSize: 18,
-                    //             ),
-                    //           ),
-                    //         ),
-                    //       ),
-                    //     ),
+                    FadeInUp(
+                      duration: const Duration(milliseconds: 1600),
+                      child: Container(
+                        padding: const EdgeInsets.only(top: 3, left: 3),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(50),
+                          border: const Border(
+                            bottom: BorderSide(color: Colors.black),
+                            top: BorderSide(color: Colors.black),
+                            left: BorderSide(color: Colors.black),
+                            right: BorderSide(color: Colors.black),
+                          ),
+                        ),
+                        child: MaterialButton(
+                          minWidth: double.infinity,
+                          height: 60,
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const SignupPage(),
+                              ),
+                            );
+                          },
+                          color: Colors.yellow[600],
+                          elevation: 0,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(50),
+                          ),
+                          child: const Text(
+                            "Sign up",
+                            style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                              fontSize: 18,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
                   ],
                 ),
-                // const SizedBox(height: 20),
+                const SizedBox(height: 20),
               ],
             ),
           ),

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:medical_app/input/makeIcons.dart';
 
-import 'settings/accountWidgets.dart';
-import 'settings/historyWidget.dart';
-import 'settings/logoutWidget.dart';
-import 'settings/notificationsWidget.dart';
+import 'icon menus/settings/accountWidgets.dart';
+import 'icon menus/settings/historyWidget.dart';
+import 'icon menus/settings/logoutWidget.dart';
+import 'icon menus/settings/notificationsWidget.dart';
 
 class MenuScreen extends StatelessWidget {
   const MenuScreen({super.key});
@@ -48,6 +48,7 @@ class MenuScreen extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           ),
+          SizedBox(height: 50)
           // Tambahkan widget lainnya di sini sesuai kebutuhan
         ],
       ),

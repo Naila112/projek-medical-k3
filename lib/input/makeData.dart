@@ -34,3 +34,18 @@ List<Appointments> upcomingAppointmentsList = [
     color: const Color(0xFFFFFFFF),
   ),
 ];
+
+/// User Acount
+class User {
+  final String name;
+  final String email;
+  final String imageUrl;
+  final String bio;
+
+  User({
+    required this.name,
+    required this.email,
+    required this.imageUrl,
+    required this.bio,
+  });
+}

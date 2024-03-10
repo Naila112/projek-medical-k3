@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:medical_app/input/makeIcons.dart';
-import 'notifications/notificationBoxBuilder.dart';
+import 'icon notifications/notificationBoxBuilder.dart';
 
 class NotificationScreen extends StatelessWidget {
   const NotificationScreen({super.key});
@@ -42,6 +42,7 @@ class NotificationScreen extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           ),
+          SizedBox(height: 50)
           // Tambahkan widget lainnya di sini sesuai kebutuhan
         ],
       ),

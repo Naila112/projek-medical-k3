@@ -10,11 +10,8 @@ Widget buildDateSection(BuildContext context) {
   List<String> daysInEnglish = [];
   List<int> daysOfMonth = [];
   for (int i = 1; i <= 7; i++) {
-    // Changed loop starting from 1 for Monday
-    daysOfMonth
-        .add(firstDayOfMonth.day + i - 1); // Adjusted index to start from 0
-    DateTime currentDay = firstDayOfMonth
-        .add(Duration(days: i - 1)); // Adjusted index to start from 0
+    daysOfMonth.add(firstDayOfMonth.day + i - 1);
+    DateTime currentDay = firstDayOfMonth.add(Duration(days: i - 1));
     daysInEnglish.add(DateFormat('E').format(currentDay));
   }
 
@@ -34,32 +31,32 @@ Widget buildDateSection(BuildContext context) {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            CupertinoButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const CalendarScreen()),
-                );
-              },
-              child: const Icon(
-                Icons.arrow_drop_down,
-                size: 30,
-                color: Colors.black,
-              ),
-            ),
+            // CupertinoButton(
+            //   onPressed: () {
+            //     Navigator.push(
+            //       context,
+            //       MaterialPageRoute(
+            //           builder: (context) => const CalendarScreen()),
+            //     );
+            //   },
+            //   child: const Icon(
+            //     Icons.arrow_drop_down,
+            //     size: 30,
+            //     color: Colors.black,
+            //   ),
+            // ),
           ],
         ),
         const SizedBox(height: 70),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            for (int i = 0; i < 7; i++) // Adjusted loop to iterate for 7 days
+            for (int i = 0; i < 7; i++)
               buildDayBox(
-                daysOfMonth[i], // Passing the day of the month
-                daysInEnglish[i],
-                daysOfMonth[i] == now.day,
-                context,
+                day: daysOfMonth[i],
+                dayName: daysInEnglish[i],
+                isToday: daysOfMonth[i] == now.day,
+                context: context,
               ),
           ],
         ),
@@ -68,45 +65,71 @@ Widget buildDateSection(BuildContext context) {
   );
 }
 
-Widget buildDayBox(
-    int day, String dayName, bool isToday, BuildContext context) {
+Widget buildDayBox({
+  required int day,
+  required String dayName,
+  required bool isToday,
+  required BuildContext context,
+}) {
   return Container(
-    margin: EdgeInsets.symmetric(horizontal: isToday ? 3 : 5),
-    width: isToday ? 40 : 50,
+    margin: EdgeInsets.symmetric(horizontal: isToday ? 1 : 1),
+    width: isToday ? 50 : 50,
     height: 100,
     decoration: BoxDecoration(
-      color: isToday ? Colors.yellow[600] : null,
-      borderRadius: BorderRadius.circular(isToday ? 20 : 10),
-      boxShadow: [
-        if (isToday)
-          BoxShadow(
-            color: Colors.black.withOpacity(0.3),
-            spreadRadius: 1,
-            blurRadius: 10,
-            offset: const Offset(3, 5),
-          ),
-      ],
+      borderRadius: BorderRadius.circular(50),
+      border: Border.all(color: Colors.black, width: 1.5),
     ),
-    child: Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Text(
-          day.toString(),
-          style: TextStyle(
-            color: Colors.black,
-            fontWeight: isToday ? FontWeight.bold : FontWeight.bold,
-            fontSize: 20,
+    child: MaterialButton(
+      minWidth: double.infinity,
+      height: 10,
+      onPressed: () {
+        // Navigator.push(
+        //   context,
+        //   MaterialPageRoute(
+        //     builder: (context) => const SignupPage(),
+        //   ),
+        // );
+      },
+      color: isToday ? Colors.yellow[600] : null,
+      elevation: isToday ? 0 : 2,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(50),
+      ),
+
+      // decoration: BoxDecoration(
+      //   color: isToday ? Colors.yellow[600] : null,
+      //   borderRadius: BorderRadius.circular(isToday ? 20 : 10),
+      //   boxShadow: [
+      //     if (isToday)
+      //       BoxShadow(
+      //         color: Colors.black.withOpacity(0.3),
+      //         spreadRadius: 1,
+      //         blurRadius: 10,
+      //         offset: const Offset(3, 5),
+      //       ),
+      //   ],
+      // ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            day.toString(),
+            style: TextStyle(
+              color: Colors.black,
+              fontWeight: isToday ? FontWeight.bold : FontWeight.normal,
+              fontSize: 17,
+            ),
           ),
-        ),
-        Text(
-          dayName,
-          style: const TextStyle(
-            color: Colors.black,
-            fontWeight: FontWeight.bold,
-            fontSize: 14,
+          Text(
+            dayName,
+            style: TextStyle(
+              color: Colors.black,
+              fontWeight: isToday ? FontWeight.bold : FontWeight.normal,
+              fontSize: 14,
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     ),
   );
 }

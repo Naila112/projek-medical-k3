@@ -42,17 +42,17 @@ class DashboardScreen extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.yellow[600],
         borderRadius: const BorderRadius.only(
-          topLeft: Radius.circular(30),
-          topRight: Radius.circular(30),
+          topLeft: Radius.circular(50),
+          topRight: Radius.circular(50),
         ),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.3),
-            spreadRadius: -1,
-            blurRadius: 10,
-            offset: const Offset(0, -5),
-          ),
-        ],
+        // boxShadow: [
+        //   BoxShadow(
+        //     color: Colors.black.withOpacity(0.3),
+        //     spreadRadius: -1,
+        //     blurRadius: 10,
+        //     offset: const Offset(0, -5),
+        //   ),
+        // ],
       ),
       child: Column(
         children: [
@@ -105,7 +105,7 @@ class DashboardScreen extends StatelessWidget {
             ),
           ),
           // Upcoming Appointments
-          const UpcomingAppointments()
+          buildUpcomingAppointments(context)
         ],
       ),
     );

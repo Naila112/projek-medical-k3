@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:animate_do/animate_do.dart';
 
 import '../screens/dashboardScreen.dart';
-// import 'package:medical_app/page/SignupPage.dart';
+import 'SignupPage.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -199,35 +199,35 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
                 ),
-                //   const SizedBox(height: 20),
-                //   FadeInUp(
-                //     duration: const Duration(milliseconds: 1600),
-                //     child: Row(
-                //       mainAxisAlignment: MainAxisAlignment.center,
-                //       children: <Widget>[
-                //         const Text("Don't have an account?"),
-                //         TextButton(
-                //           onPressed: () {
-                //             Navigator.push(
-                //               context,
-                //               MaterialPageRoute(
-                //                 builder: (context) => const SignupPage(),
-                //               ),
-                //             );
-                //           },
-                //           child: const Text(
-                //             "Sign up",
-                //             style: TextStyle(
-                //               fontWeight: FontWeight.w600,
-                //               fontSize: 18,
-                //               color: Colors.black,
-                //             ),
-                //           ),
-                //         ),
-                //       ],
-                //     ),
-                //   ),
-                //   const SizedBox(height: 20),
+                const SizedBox(height: 20),
+                FadeInUp(
+                  duration: const Duration(milliseconds: 1600),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      const Text("Don't have an account?"),
+                      TextButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const SignupPage(),
+                            ),
+                          );
+                        },
+                        child: const Text(
+                          "Sign up",
+                          style: TextStyle(
+                            fontWeight: FontWeight.w600,
+                            fontSize: 18,
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 20),
               ],
             ),
           ),

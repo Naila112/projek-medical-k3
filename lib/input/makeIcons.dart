@@ -35,18 +35,23 @@ Widget buildNotificationIcon(IconData iconData) {
   return Container(
     width: 45,
     height: 45,
-    decoration: BoxDecoration(
-      color: Colors.yellow[600],
-      borderRadius: BorderRadius.circular(15),
-      boxShadow: [
-        BoxShadow(
-          color: Colors.black.withOpacity(0.3),
-          spreadRadius: 1,
-          blurRadius: 10,
-          offset: const Offset(3, 5),
-        ),
-      ],
-    ),
+    // decoration: BoxDecoration(
+    //   color: Colors.yellow[600],
+    //   borderRadius: BorderRadius.circular(50),
+    //   border: Border.all(color: Colors.black),
+    // ),
+    // decoration: BoxDecoration(
+    // color: Colors.yellow[600],
+    //   borderRadius: BorderRadius.circular(15),
+    // boxShadow: [
+    //   BoxShadow(
+    //     color: Colors.black.withOpacity(0.3),
+    //     spreadRadius: 1,
+    //     blurRadius: 10,
+    //     offset: const Offset(3, 5),
+    //   ),
+    // ],
+    // ),
     child: Center(
       child: Icon(
         iconData,
@@ -69,8 +74,8 @@ Widget buildCheckCircleButton(BuildContext context) {
         },
         padding: EdgeInsets.zero,
         child: const Icon(
-          Icons.check_circle_sharp,
-          size: 47,
+          CupertinoIcons.checkmark_alt_circle,
+          size: 40,
           color: Colors.black87,
         ),
       ),
@@ -87,7 +92,7 @@ Widget buildBackIcons(BuildContext context) {
         Navigator.pop(context);
       },
       child: const Icon(
-        Icons.arrow_back_ios,
+        Icons.arrow_back_rounded,
         size: 20,
         color: Colors.black,
       ),
