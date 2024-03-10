@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:medical_app/screens/menuScreen.dart';
 import 'package:medical_app/screens/notificationScreen.dart';
-import 'package:medical_app/screens/settingScreen.dart';
 import '../nav/navigator.dart';
 
 // Build notification icons row
@@ -21,7 +21,7 @@ Widget buildNotificationIcons(BuildContext context) {
         // Icon button for settings
         CupertinoButton(
           onPressed: () {
-            PageNavigator.fadeToPage(context, const SettingScreen());
+            PageNavigator.fadeToPage(context, const MenuScreen());
           },
           child: buildNotificationIcon(Icons.menu_rounded),
         ),

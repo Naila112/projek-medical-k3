@@ -7,12 +7,14 @@ Widget buildDateSection(BuildContext context) {
   DateTime now = DateTime.now();
   DateTime firstDayOfMonth =
       DateTime(now.year, now.month, now.day - now.weekday + 1);
-  int daysInMonth = DateTime(now.year, now.month + 1, 0).day;
   List<String> daysInEnglish = [];
   List<int> daysOfMonth = [];
-  for (int i = 7; i < daysInMonth; i++) {
-    daysOfMonth.add(i + 1);
-    DateTime currentDay = firstDayOfMonth.add(Duration(days: i));
+  for (int i = 1; i <= 7; i++) {
+    // Changed loop starting from 1 for Monday
+    daysOfMonth
+        .add(firstDayOfMonth.day + i - 1); // Adjusted index to start from 0
+    DateTime currentDay = firstDayOfMonth
+        .add(Duration(days: i - 1)); // Adjusted index to start from 0
     daysInEnglish.add(DateFormat('E').format(currentDay));
   }
 
@@ -52,11 +54,11 @@ Widget buildDateSection(BuildContext context) {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            for (int i = 1; i < 8; i++)
+            for (int i = 0; i < 7; i++) // Adjusted loop to iterate for 7 days
               buildDayBox(
-                firstDayOfMonth.add(Duration(days: i)).day,
+                daysOfMonth[i], // Passing the day of the month
                 daysInEnglish[i],
-                firstDayOfMonth.add(Duration(days: i)).day == now.day,
+                daysOfMonth[i] == now.day,
                 context,
               ),
           ],

@@ -1,67 +1,58 @@
-import 'package:flutter/material.dart';
-import 'package:medical_app/input/makeIcons.dart';
+// import 'package:flutter/material.dart';
+// import 'package:medical_app/input/makeIcons.dart';
 
-class SettingScreen extends StatelessWidget {
-  const SettingScreen({super.key});
+// import 'settings/accountWidgets.dart';
+// import 'settings/notificationWidget.dart';
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      resizeToAvoidBottomInset: false,
-      backgroundColor: Colors.white,
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            buildBoxKuning(context), // Memuat box kuning atas
-            buildText(context), // Memuat text
-          ],
-        ),
-      ),
-    );
-  }
+// class SettingScreen extends StatelessWidget {
+//   const SettingScreen({super.key});
 
-// Memuat box kuning atas
-  Widget buildBoxKuning(context) {
-    return Container(
-      width: double.infinity,
-      height: 300,
-      decoration: BoxDecoration(
-        color: Colors.yellow[600],
-        borderRadius: const BorderRadius.only(
-          bottomLeft: Radius.circular(30),
-          bottomRight: Radius.circular(30),
-        ),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.3),
-            spreadRadius: -1,
-            blurRadius: 10,
-            offset: const Offset(0, -5),
-          ),
-        ],
-      ),
-      child: buildBackIcons(context), // Memuat icon back
-    );
-  }
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       resizeToAvoidBottomInset: false,
+//       backgroundColor: Colors.white,
+//       body: SingleChildScrollView(
+//         child: Column(
+//           crossAxisAlignment: CrossAxisAlignment.start,
+//           children: [
+//             buildBackIcons(context), // Memuat icon back
+//             buildTextSetting(context), // Memuat text setting
+//             buildTextAccount(context), // Memuat text account
+//             buildAccountInfo(
+//                 context, ' '), // Memuat widget untuk menampilkan informasi akun
+//             // Memuat box kuning
+//             buildWhiteBox(), // Memuat jarak antaran account dan history
+//             buildTextNotification(context), // Memuat text notification
+//             buildHistory(context), // Memuat widget untuk menampilkan history
+//           ],
+//         ),
+//       ),
+//     );
+//   }
 
-  // Memuat text
-  Widget buildText(context) {
-    return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 50, vertical: 10),
-      child: const Row(
-        children: [
-          Text(
-            'Setting',
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          // Tambahkan widget lainnya di sini sesuai kebutuhan
-        ],
-      ),
-    );
-  }
-}
+//   // Memuat text setting
+//   Widget buildTextSetting(BuildContext context) {
+//     return Container(
+//       padding: const EdgeInsets.fromLTRB(40, 0, 40, 30),
+//       child: const Row(
+//         children: [
+//           Text(
+//             'Setting',
+//             style: TextStyle(
+//               color: Colors.black,
+//               fontSize: 20,
+//               fontWeight: FontWeight.bold,
+//             ),
+//           ),
+//           // Tambahkan widget lainnya di sini sesuai kebutuhan
+//         ],
+//       ),
+//     );
+//   }
+
+//   // Memuat box putih
+//   Widget buildWhiteBox() {
+//     return const SizedBox(height: 20);
+//   }
+// }

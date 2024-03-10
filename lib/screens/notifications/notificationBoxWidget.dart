@@ -30,6 +30,7 @@ class _NotificationBoxState extends State<NotificationBox> {
       },
       child: Container(
         width: double.infinity,
+        height: 140,
         margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
         padding: const EdgeInsets.all(15),
         decoration: BoxDecoration(
@@ -52,7 +53,7 @@ class _NotificationBoxState extends State<NotificationBox> {
               children: [
                 Icon(
                   Icons.circle_rounded,
-                  size: 30,
+                  size: 20,
                   color: widget.accepted ? Colors.green : Colors.red,
                 ),
                 const SizedBox(width: 15),
@@ -61,7 +62,7 @@ class _NotificationBoxState extends State<NotificationBox> {
                   style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Colors.black,
-                    fontSize: 20,
+                    fontSize: 17,
                   ),
                 ),
               ],
@@ -75,7 +76,7 @@ class _NotificationBoxState extends State<NotificationBox> {
                       : widget.content),
               style: const TextStyle(
                 color: Colors.black87,
-                fontSize: 16,
+                fontSize: 15,
               ),
               textAlign: TextAlign.justify,
             ),
@@ -149,7 +150,7 @@ class _NotificationBoxState extends State<NotificationBox> {
                   widget.accepted ? 'Accepted' : 'Add',
                   style: TextStyle(
                     color: widget.accepted ? Colors.green : Colors.blue,
-                    fontSize: 18,
+                    fontSize: 15,
                   ),
                 ),
               ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:medical_app/input/makeIcons.dart';
-import 'notification/notificationBoxBuilder.dart';
+import 'notifications/notificationBoxBuilder.dart';
 
 class NotificationScreen extends StatelessWidget {
   const NotificationScreen({super.key});
@@ -15,7 +15,7 @@ class NotificationScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             buildBackIcons(context), // Memuat icon back
-            buildText(context), // Memuat text
+            buildTextNotification(context), // Memuat text Notification
             buildFirstNotificationBox(
                 context), // Memuat box notification dengan konten di dalamnya
             buildSecondNotificationBox(
@@ -28,10 +28,10 @@ class NotificationScreen extends StatelessWidget {
     );
   }
 
-  // Memuat text
-  Widget buildText(context) {
+  // Memuat text notification
+  Widget buildTextNotification(context) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 50, vertical: 10),
+      padding: const EdgeInsets.fromLTRB(40, 0, 40, 0),
       child: const Row(
         children: [
           Text(

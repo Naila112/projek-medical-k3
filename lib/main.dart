@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'screens/dashboardScreen.dart';
-// import 'dashboard/notificationScreen.dart';
 // import 'page/HomePage.dart';
 // import 'page/LoginPage.dart';
 // import 'page/SignupPage.dart';
@@ -25,7 +24,6 @@ class MyApp extends StatelessWidget {
         // "loginPage": (context) => const LoginPage(),
         // "signupPage": (context) => const SignupPage(),
         "/": (context) => const DashboardScreen(),
-        // "/": (context) => const NotificationScreen(),
       },
     );
   }
