@@ -1,7 +1,7 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
-import 'LoginPage.dart';
-import 'SignupPage.dart';
+import 'CategoryPage.dart';
+// import 'SignupPage.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -14,7 +14,7 @@ class HomePage extends StatelessWidget {
           scrollDirection: Axis.vertical,
           child: Container(
             width: double.infinity,
-            padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 50),
+            padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 50),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -57,7 +57,7 @@ class HomePage extends StatelessWidget {
                     width: MediaQuery.of(context).size.width / 1,
                     decoration: const BoxDecoration(
                       image: DecorationImage(
-                        image: AssetImage('assets/icon/appointment.png'),
+                        image: AssetImage('assets/icon/insurtech.png'),
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -74,7 +74,7 @@ class HomePage extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const LoginPage(),
+                              builder: (context) => const CategoryPage(),
                             ),
                           );
                         },
@@ -83,7 +83,7 @@ class HomePage extends StatelessWidget {
                           borderRadius: BorderRadius.circular(50),
                         ),
                         child: const Text(
-                          "Login",
+                          "Get Stated",
                           style: TextStyle(
                             fontWeight: FontWeight.w600,
                             fontSize: 18,
@@ -91,48 +91,41 @@ class HomePage extends StatelessWidget {
                         ),
                       ),
                     ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    FadeInUp(
-                      duration: const Duration(milliseconds: 1600),
-                      child: Container(
-                        padding: const EdgeInsets.only(top: 3, left: 3),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(50),
-                          border: const Border(
-                            bottom: BorderSide(color: Colors.black),
-                            top: BorderSide(color: Colors.black),
-                            left: BorderSide(color: Colors.black),
-                            right: BorderSide(color: Colors.black),
-                          ),
-                        ),
-                        child: MaterialButton(
-                          minWidth: double.infinity,
-                          height: 60,
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const SignupPage(),
-                              ),
-                            );
-                          },
-                          color: Colors.yellow[600],
-                          elevation: 0,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(50),
-                          ),
-                          child: const Text(
-                            "Sign up",
-                            style: TextStyle(
-                              fontWeight: FontWeight.w600,
-                              fontSize: 18,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
+                    const SizedBox(height: 20),
+                    // FadeInUp(
+                    //   duration: const Duration(milliseconds: 1600),
+                    //   child: Container(
+                    //     // padding: const EdgeInsets.only(top: 3, left: 3),
+                    //     decoration: BoxDecoration(
+                    //       borderRadius: BorderRadius.circular(50),
+                    //       border: Border.all(color: Colors.black),
+                    //     ),
+                    //     child: MaterialButton(
+                    //       minWidth: double.infinity,
+                    //       height: 60,
+                    //       onPressed: () {
+                    //         Navigator.push(
+                    //           context,
+                    //           MaterialPageRoute(
+                    //             builder: (context) => const SignupPage(),
+                    //           ),
+                    //         );
+                    //       },
+                    //       color: const Color(0xFFB0C3FF),
+                    //       elevation: 0,
+                    //       shape: RoundedRectangleBorder(
+                    //         borderRadius: BorderRadius.circular(50),
+                    //       ),
+                    //       child: const Text(
+                    //         "Sign up",
+                    //         style: TextStyle(
+                    //           fontWeight: FontWeight.w600,
+                    //           fontSize: 18,
+                    //         ),
+                    //       ),
+                    //     ),
+                    //   ),
+                    // ),
                   ],
                 ),
                 const SizedBox(height: 20),

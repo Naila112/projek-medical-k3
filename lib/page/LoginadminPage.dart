@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:animate_do/animate_do.dart';
-import 'package:medical_app/page/LoginadminPage.dart';
+import 'package:medical_app/user/admin/01_dasboardScreen.dart';
 import 'package:medical_app/user/pegawai/widgets/form_widgets.dart';
 import 'package:medical_app/user/pegawai/widgets/icon_widget.dart';
 
-class SignupPage extends StatefulWidget {
-  const SignupPage({super.key});
+class LoginadminPage extends StatefulWidget {
+  const LoginadminPage({super.key});
 
   @override
-  _SignupPageState createState() => _SignupPageState();
+  _LoginadminPageState createState() => _LoginadminPageState();
 }
 
-class _SignupPageState extends State<SignupPage> {
-  bool _isPasswordVisible = false;
+class _LoginadminPageState extends State<LoginadminPage> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   @override
@@ -26,79 +25,84 @@ class _SignupPageState extends State<SignupPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             buildBackIcons(context), // Menampilkan tombol kembali
-            buildSignUpForm(),
+            buildLoginForm(),
           ],
         ),
       ),
     );
   }
 
-  Widget buildSignUpForm() {
+  // Widget untuk membangun form login
+  Widget buildLoginForm() {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 40),
       child: Form(
         key: _formKey,
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            const SizedBox(height: 10),
+            const SizedBox(height: 20),
             FadeInUp(
               duration: const Duration(milliseconds: 1000),
               child: const Text(
-                "Sign up",
-                style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                "Login",
+                style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
             const SizedBox(height: 20),
             FadeInUp(
               duration: const Duration(milliseconds: 1100),
-              child: Text(
-                "Create an account",
-                style: TextStyle(fontSize: 15, color: Colors.grey[700]),
-              ),
-            ),
-            const SizedBox(height: 20),
-            FadeInUp(
-              duration: const Duration(milliseconds: 1200),
-              child: makeNameInput(context),
-            ),
-            const SizedBox(height: 10),
-            FadeInUp(
-              duration: const Duration(milliseconds: 1300),
-              child: makeIDInput(context),
-            ),
-            const SizedBox(height: 10),
-            FadeInUp(
-              duration: const Duration(milliseconds: 1400),
-              child: makeEmailInput(context),
-            ),
-            const SizedBox(height: 10),
-            FadeInUp(
-              duration: const Duration(milliseconds: 1500),
-              child: makePasswordInput(
-                context,
-                isPasswordVisible: _isPasswordVisible,
-                onPressed: () {
-                  setState(() {
-                    _isPasswordVisible = !_isPasswordVisible;
-                  });
-                },
+              child: Container(
+                height: MediaQuery.of(context).size.height / 3,
+                width: MediaQuery.of(context).size.width / 2.1,
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage('assets/icon/onlinephone.png'),
+                    fit: BoxFit.cover,
+                  ),
+                ),
               ),
             ),
             const SizedBox(height: 40),
+            Column(
+              children: <Widget>[
+                FadeInUp(
+                  duration: const Duration(milliseconds: 1200),
+                  child: makeNameInput(context),
+                ),
+                const SizedBox(height: 10),
+                FadeInUp(
+                  duration: const Duration(milliseconds: 1300),
+                  child: makeIDInput(context),
+                ),
+              ],
+            ),
+            const SizedBox(height: 30),
             FadeInUp(
-              duration: const Duration(milliseconds: 1600),
-              child: buildSignUpButton(),
+              duration: const Duration(milliseconds: 1400),
+              child: Column(
+                children: <Widget>[
+                  buildAdminLoginButton(),
+                  const SizedBox(height: 20),
+                ],
+              ),
             ),
             const SizedBox(height: 20),
+            /* Jika ingin menambahkan opsi "Forget Password"
+            _buildForgetPassword(),
+            */
           ],
         ),
       ),
     );
   }
 
-  // Widget untuk membangun tombol sign up
-  Widget buildSignUpButton() {
+  // Widget untuk tombol login admin
+  Widget buildAdminLoginButton() {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(50),
@@ -109,10 +113,11 @@ class _SignupPageState extends State<SignupPage> {
         height: 60,
         onPressed: () {
           if (_formKey.currentState!.validate()) {
+            // Logic untuk login admin
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => const LoginadminPage(),
+                builder: (context) => const DashboardScreen1(),
               ),
             );
           }
