@@ -1,6 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
-import 'CategoryPage.dart';
+import 'package:medical_app/page/LoginpegawaiPage.dart';
 // import 'SignupPage.dart';
 
 class HomePage extends StatelessWidget {
@@ -74,7 +74,7 @@ class HomePage extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const CategoryPage(),
+                              builder: (context) => const LoginPage(),
                             ),
                           );
                         },

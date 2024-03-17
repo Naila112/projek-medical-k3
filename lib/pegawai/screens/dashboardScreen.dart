@@ -1,13 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:medical_app/user/pegawai/widgets/icon_widget.dart';
-import 'package:medical_app/user/pegawai/widgets/date_widgets.dart';
-import 'package:medical_app/user/pegawai/widgets/greeting_widget.dart';
+import 'package:medical_app/pegawai/widgets/date_widgets.dart';
+import 'package:medical_app/pegawai/widgets/greeting_widget.dart';
 
-import 'upcomingScreen.dart';
-
-class DashboardScreen2 extends StatelessWidget {
-  const DashboardScreen2({super.key});
+class DashboardScreen extends StatelessWidget {
+  const DashboardScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +15,7 @@ class DashboardScreen2 extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            buildNotificationIcons(context), // Memuat icon notifikasi dan menu
+            // buildNotificationIcons(context), // Memuat icon notifikasi dan menu
             buildGreetingBox(context, ''), // Memuat sapaan
             buildDateSection(context), // Memuat tanggal dan hari
             buildYellowBox(), // Memuat box kuning
@@ -105,8 +102,6 @@ class DashboardScreen2 extends StatelessWidget {
               ],
             ),
           ),
-          // Upcoming Appointments
-          buildUpcomingAppointments(context)
         ],
       ),
     );

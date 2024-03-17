@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:animate_do/animate_do.dart';
-import 'package:medical_app/user/pegawai/widgets/form_widgets.dart';
-import 'package:medical_app/user/pegawai/widgets/icon_widget.dart';
+import 'package:medical_app/pegawai/widgets/form_widgets.dart';
+import 'package:medical_app/pegawai/widgets/icon_widget.dart';
 
-import '../user/pegawai/screens/02_dashboardScreen.dart';
-
-class LoginpegawaiPage extends StatefulWidget {
-  const LoginpegawaiPage({super.key});
+class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
 
   @override
-  _LoginpegawaiPageState createState() => _LoginpegawaiPageState();
+  _LoginPageState createState() => _LoginPageState();
 }
 
-class _LoginpegawaiPageState extends State<LoginpegawaiPage> {
+class _LoginPageState extends State<LoginPage> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   @override
@@ -87,7 +85,7 @@ class _LoginpegawaiPageState extends State<LoginpegawaiPage> {
               duration: const Duration(milliseconds: 1400),
               child: Column(
                 children: <Widget>[
-                  buildPegawaiLoginButton(),
+                  // buildPegawaiLoginButton(),
                 ],
               ),
             ),
@@ -96,43 +94,6 @@ class _LoginpegawaiPageState extends State<LoginpegawaiPage> {
             _buildForgetPassword(),
             */
           ],
-        ),
-      ),
-    );
-  }
-
-  // Widget untuk tombol login pegawai
-  Widget buildPegawaiLoginButton() {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(50),
-        border: Border.all(color: Colors.black),
-      ),
-      child: MaterialButton(
-        minWidth: double.infinity,
-        height: 60,
-        onPressed: () {
-          if (_formKey.currentState!.validate()) {
-            // Logic untuk login pegawai
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const DashboardScreen2(),
-              ),
-            );
-          }
-        },
-        color: const Color(0xFFB0C3FF),
-        elevation: 0,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(50),
-        ),
-        child: const Text(
-          "Login",
-          style: TextStyle(
-            fontWeight: FontWeight.w600,
-            fontSize: 18,
-          ),
         ),
       ),
     );
