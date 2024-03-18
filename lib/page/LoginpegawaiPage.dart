@@ -1,5 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:animate_do/animate_do.dart';
+import 'package:flutter/material.dart';
+import 'package:medical_app/pegawai/screens/dashboardScreen.dart';
 import 'package:medical_app/pegawai/widgets/form_widgets.dart';
 import 'package:medical_app/pegawai/widgets/icon_widget.dart';
 
@@ -85,7 +86,7 @@ class _LoginPageState extends State<LoginPage> {
               duration: const Duration(milliseconds: 1400),
               child: Column(
                 children: <Widget>[
-                  // buildPegawaiLoginButton(),
+                  buildLoginButton(),
                 ],
               ),
             ),
@@ -94,6 +95,43 @@ class _LoginPageState extends State<LoginPage> {
             _buildForgetPassword(),
             */
           ],
+        ),
+      ),
+    );
+  }
+
+  // Widget untuk tombol login pegawai
+  Widget buildLoginButton() {
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(50),
+        border: Border.all(color: Colors.black),
+      ),
+      child: MaterialButton(
+        minWidth: double.infinity,
+        height: 60,
+        onPressed: () {
+          if (_formKey.currentState!.validate()) {
+            // Logic untuk login pegawai
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const DashboardScreen(),
+              ),
+            );
+          }
+        },
+        color: const Color(0xFFB0C3FF),
+        elevation: 0,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(50),
+        ),
+        child: const Text(
+          "Login",
+          style: TextStyle(
+            fontWeight: FontWeight.w600,
+            fontSize: 18,
+          ),
         ),
       ),
     );
