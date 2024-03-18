@@ -36,7 +36,7 @@ class DashboardScreen extends StatelessWidget {
   Widget buildContentBox(context) {
     return Container(
       width: double.infinity,
-      height: 500,
+      height: 350,
       decoration: const BoxDecoration(
         color: Color(0xFFB0C3FF),
         borderRadius: BorderRadius.only(

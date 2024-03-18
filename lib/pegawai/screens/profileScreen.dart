@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:medical_app/pegawai/profile/ContactDetailsProfile.dart';
+import 'package:medical_app/pegawai/profile/generalProfile.dart';
 import 'package:medical_app/pegawai/widgets/icon_widget.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -16,6 +18,8 @@ class ProfileScreen extends StatelessWidget {
             buildBackIcons(context), // Memuat icon back
             buildTextProfile(context), // Memuat text Profile
             buildContentGeneral(context),
+            buildContentContactDetails(context),
+            buildSaveChangesButton(),
           ],
         ),
       ),
@@ -60,131 +64,62 @@ class ProfileScreen extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 10), // Jarak antara teks dan box
-        buildTextFullName(context),
-        // buildTextBirth(context),
+        const GeneralProfile(),
       ],
     );
   }
 
-  // Memuat Box di bawah teks "Full name"
-  Widget buildTextFullName(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
-      width: double.infinity,
-      decoration: BoxDecoration(
-        color: Colors.grey[300],
-        border: Border(
-          top: BorderSide(color: Colors.black54),
-          bottom: BorderSide(color: Colors.black54),
+  // Memuat Box General
+  Widget buildContentContactDetails(context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Container(
+          padding: const EdgeInsets.fromLTRB(30, 15, 0, 0),
+          child: const Text(
+            'Contact details',
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 15,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
         ),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            'Full name',
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 17,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          SizedBox(height: 10), // Jarak antara teks dan box
-          Container(
-            width: double.infinity,
-            height: 50,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(10),
-              border: Border.all(color: Colors.black54),
-            ),
-            child: TextField(
-              decoration: InputDecoration(
-                hintText: 'Enter your full name',
-                border: InputBorder.none,
-                contentPadding: EdgeInsets.symmetric(horizontal: 10),
-              ),
-            ),
-          ),
-          SizedBox(height: 20), // Jarak antara box sebelumnya dan box baru
-          Text(
-            'Date of Birth',
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 17,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          SizedBox(height: 10), // Jarak antara teks dan box
-          Container(
-            width: double.infinity,
-            height: 50,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(10),
-              border: Border.all(color: Colors.black54),
-            ),
-            child: TextField(
-              decoration: InputDecoration(
-                hintText: 'Enter your date of birth',
-                border: InputBorder.none,
-                contentPadding: EdgeInsets.symmetric(horizontal: 10),
-              ),
-            ),
-          ),
-        ],
-      ),
+        const SizedBox(height: 10), // Jarak antara teks dan box
+        const ContactDetailsProfile(),
+      ],
     );
   }
 
-  // Memuat Box di bawah teks "Date of Birth"
-  // Widget buildTextBirth(context) {
-  //   return Container(
-  //     padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
-  //     width: double.infinity,
-  //     height: 300,
-  //     decoration: BoxDecoration(
-  //       color: Colors.grey[300],
-  //       border: const Border(
-  //         top: BorderSide(color: Colors.black54),
-  //         bottom: BorderSide(color: Colors.black54),
-  //       ),
-  //     ),
-  //     child: Column(
-  //       crossAxisAlignment: CrossAxisAlignment.start,
-  //       children: [
-  //         const Text(
-  //           'Date of Birth',
-  //           style: TextStyle(
-  //             color: Colors.black,
-  //             fontSize: 17,
-  //             fontWeight: FontWeight.bold,
-  //           ),
-  //         ),
-  //         // Tambahkan widget lain di dalam box sesuai kebutuhan
-  //         const SizedBox(height: 10), // Jarak antara teks dan box
-  //         Container(
-  //           width: double.infinity,
-  //           height: 50,
-  //           decoration: BoxDecoration(
-  //             color: Colors.white,
-  //             borderRadius: BorderRadius.circular(10),
-  //             border: Border.all(color: Colors.black54),
-  //           ),
-  //           child: const TextField(
-  //             decoration: InputDecoration(
-  //               hintText: ' ', // Text placeholder
-  //               border:
-  //                   InputBorder.none, // Menghilangkan border bawaan TextField
-  //               contentPadding: EdgeInsets.symmetric(
-  //                   horizontal: 10), // Padding untuk teks dalam TextField
-  //             ),
-  //           ),
-  //         ),
-
-  //         // Tambahkan widget di dalam box sesuai kebutuhan
-  //       ],
-  //     ),
-  //   );
-  // }
+  Widget buildSaveChangesButton() {
+    return Align(
+      alignment: Alignment.bottomCenter,
+      child: Container(
+        width: 150,
+        height: 40,
+        margin: const EdgeInsets.only(bottom: 20, top: 20),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(50),
+          border: Border.all(color: Colors.black),
+        ),
+        child: MaterialButton(
+          onPressed: () {
+            // Tambahkan fungsi yang akan dijalankan saat tombol ditekan
+          },
+          color: const Color(0xFFB0C3FF),
+          elevation: 0,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(50),
+          ),
+          child: const Text(
+            "Save Changes",
+            style: TextStyle(
+              fontWeight: FontWeight.w600,
+              fontSize: 15,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
 }

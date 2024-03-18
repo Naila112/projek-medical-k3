@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 
 // import 'pegawai/screens/profileScreen.dart';
-
-// import 'pegawai/screens/dashboardScreen.dart';
-import 'page/HomePage.dart';
+import 'pegawai/screens/dashboardScreen.dart';
+// import 'page/HomePage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,8 +20,8 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Colors.white,
       ),
       routes: {
-        "/": (context) => const HomePage(),
-        // "/": (context) => const DashboardScreen(),
+        // "/": (context) => const HomePage(),
+        "/": (context) => const DashboardScreen(),
         // "/": (context) => const ProfileScreen(),
       },
     );

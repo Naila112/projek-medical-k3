@@ -36,7 +36,7 @@ class AlertDialogWidget extends StatelessWidget {
           child: const Text(
             "Yes",
             style: TextStyle(
-              color: Colors.red,
+              color: Colors.green,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -46,7 +46,7 @@ class AlertDialogWidget extends StatelessWidget {
           child: const Text(
             "No",
             style: TextStyle(
-              color: Colors.blue,
+              color: Colors.red,
               fontWeight: FontWeight.bold,
             ),
           ),

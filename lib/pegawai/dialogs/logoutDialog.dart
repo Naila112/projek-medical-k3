@@ -35,7 +35,7 @@ class LogOutDialog extends StatelessWidget {
           child: const Text(
             'Yes',
             style: TextStyle(
-              color: Colors.black,
+              color: Colors.green,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -47,7 +47,7 @@ class LogOutDialog extends StatelessWidget {
           child: const Text(
             'No',
             style: TextStyle(
-              color: Colors.black,
+              color: Colors.red,
               fontWeight: FontWeight.bold,
             ),
           ),

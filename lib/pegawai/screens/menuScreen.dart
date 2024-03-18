@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:medical_app/pegawai/icon%20menus/accountWidgets.dart';
-import 'package:medical_app/pegawai/icon%20menus/historyWidget.dart';
+import 'package:medical_app/pegawai/icon%20menus/medicalrecordWidget.dart';
 import 'package:medical_app/pegawai/icon%20menus/logoutWidget.dart';
 import 'package:medical_app/pegawai/widgets/icon_widget.dart';
 
@@ -18,13 +18,9 @@ class MenuScreen extends StatelessWidget {
           children: [
             buildContentBox(context),
             const SizedBox(height: 20),
-            // buildBackIcons(context), // Memuat icon back
-            // buildTextMenu(context), // Memuat text menu
-            // buildTextAccount(context), // Memuat text account
-            // buildAccountInfo(context, ' '), // Memuat widget untuk menampilkan informasi akun
-            buildTextSettings(context), // Memuat text settings
-            // buildNotification(context), // Memuat widget untuk menampilkan notification
-            buildHistory(context), // Memuat widget untuk menampilkan history
+            buildTextSettings(context), // Memuat text setting
+            buildMedicalRecord(
+                context), // Memuat widget untuk menampilkan history
             buildLogOut(context), // Memuat widget untuk menampilkan log put
           ],
         ),
@@ -60,7 +56,7 @@ class MenuScreen extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
-            child: buildAccountInfo(context, ' '),
+            child: buildAccountInfo(context),
           ),
         ],
       ),

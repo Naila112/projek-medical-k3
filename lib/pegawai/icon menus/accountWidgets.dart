@@ -23,7 +23,7 @@ Widget buildTextAccount(context) {
 }
 
 // Memuat widget untuk menampilkan informasi akun
-Widget buildAccountInfo(BuildContext context, String makeIDInput) {
+Widget buildAccountInfo(BuildContext context) {
   return InkWell(
     onTap: () {
       // Navigasi ke halaman profil ketika bagian mana pun dari widget diklik
@@ -64,12 +64,13 @@ Widget buildAccountInfo(BuildContext context, String makeIDInput) {
               size: 30,
             ),
           ),
-          const SizedBox(width: 20),
+          const SizedBox(width: 10),
           const Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
                 'Naila Dwi Adhini',
+                // '$username',
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 16,
@@ -77,8 +78,8 @@ Widget buildAccountInfo(BuildContext context, String makeIDInput) {
                 ),
               ),
               Text(
-                // Id,
                 'Id Pegawai',
+                // '$id',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 14,

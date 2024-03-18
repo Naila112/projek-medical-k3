@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+TextEditingController nameController = TextEditingController();
+TextEditingController idController = TextEditingController();
+
 // Name
 Widget makeNameInput(BuildContext context) {
   return TextFormField(
@@ -9,6 +12,7 @@ Widget makeNameInput(BuildContext context) {
       }
       return null;
     },
+    controller: nameController,
     decoration: const InputDecoration(
       labelText: 'Name',
       hintText: 'Enter your name',
@@ -31,6 +35,7 @@ Widget makeIDInput(BuildContext context) {
       }
       return null;
     },
+    controller: idController,
     obscureText: false,
     decoration: const InputDecoration(
       labelText: 'ID Pegawai',

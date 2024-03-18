@@ -1,5 +1,7 @@
 // Memuat text account
 import 'package:flutter/material.dart';
+import 'package:medical_app/nav/navigator.dart';
+import 'package:medical_app/pegawai/screens/medicalrecordScreen.dart';
 
 Widget buildTextSettings(context) {
   return Container(
@@ -21,7 +23,7 @@ Widget buildTextSettings(context) {
 }
 
 // Memuat widget untuk menampilkan history
-Widget buildHistory(BuildContext context) {
+Widget buildMedicalRecord(BuildContext context) {
   return Container(
     width: double.infinity,
     margin: const EdgeInsets.symmetric(vertical: 0, horizontal: 20),
@@ -51,15 +53,15 @@ Widget buildHistory(BuildContext context) {
           child: const Icon(
             Icons.history_rounded,
             color: Colors.black87,
-            size: 25,
+            size: 30,
           ),
         ),
-        // const SizedBox(width: 10),
+        const SizedBox(width: 20),
         const Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
-              'History',
+              'Medical Record',
               style: TextStyle(
                 color: Colors.black,
                 fontSize: 16,
@@ -73,9 +75,13 @@ Widget buildHistory(BuildContext context) {
           icon: const Icon(
             Icons.arrow_forward_ios_rounded,
             color: Colors.black87,
-            size: 25,
+            size: 30,
           ),
           onPressed: () {
+            PageNavigator.slideLeftToPage(
+              context,
+              const MedicalRecordScreen(),
+            );
             // Tambahkan logika untuk mengedit informasi akun
           },
         ),

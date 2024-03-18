@@ -22,20 +22,20 @@ Widget buildLogOut(BuildContext context) {
     child: Row(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Container(
+        const SizedBox(
           width: 40,
           height: 40,
           // decoration: BoxDecoration(
           //   shape: BoxShape.circle,
           //   color: Colors.grey[200], // Ganti warna sesuai kebutuhan
           // ),
-          child: const Icon(
+          child: Icon(
             Icons.logout_rounded,
             color: Colors.black87,
-            size: 25,
+            size: 30,
           ),
         ),
-        // const SizedBox(width: 10),
+        const SizedBox(width: 20),
         const Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -52,7 +52,7 @@ Widget buildLogOut(BuildContext context) {
         const Spacer(),
         IconButton(
           icon: const Icon(Icons.arrow_forward_ios_rounded,
-              color: Colors.black87),
+              color: Colors.black87, size: 30),
           onPressed: () {
             // Tampilkan dialog log out
             showDialog(
