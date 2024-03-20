@@ -18,8 +18,7 @@ class MedicalRecordScreen extends StatelessWidget {
             buildTextMedicalRecord(context), // Memuat text Notification
             buildFirstMedicalRecordBox(
                 context), // Memuat box notification dengan konten di dalamnya
-            buildSecondMedicalRecordBox(
-                context), // Memuat box notification dengan konten di dalamnya
+            // buildSecondMedicalRecordBox(context), // Memuat box notification dengan konten di dalamnya
             buildThirdMedicalRecordBox(
                 context), // Memuat box notification dengan konten di dalamnya
           ],

@@ -70,43 +70,43 @@ class _MedicalRecordBoxState extends State<MedicalRecordBox> {
               ),
               textAlign: TextAlign.justify,
             ),
-            Align(
-              alignment: Alignment.bottomRight,
-              child: CupertinoButton(
-                onPressed: () {
-                  if (widget.accepted) {
-                    showDialog(
-                      context: context,
-                      builder: (BuildContext context) {
-                        return AlertDialogWidget(
-                          onAccept: () {
-                            setState(() {
-                              widget.accepted = false;
-                            });
-                            Navigator.of(context).pop();
-                          },
-                          onCancel: () {
-                            Navigator.of(context).pop();
-                          },
-                        );
-                      },
-                    );
-                  } else {
-                    setState(() {
-                      widget.accepted = true;
-                    });
-                  }
-                },
-                padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
-                child: Text(
-                  widget.accepted ? 'Accepted' : 'Add',
-                  style: TextStyle(
-                    color: widget.accepted ? Colors.green : Colors.blue,
-                    fontSize: 15,
-                  ),
-                ),
-              ),
-            ),
+            // Align(
+            //   alignment: Alignment.bottomRight,
+            //   child: CupertinoButton(
+            //     onPressed: () {
+            //       if (widget.accepted) {
+            //         showDialog(
+            //           context: context,
+            //           builder: (BuildContext context) {
+            //             return AlertDialogWidget(
+            //               onAccept: () {
+            //                 setState(() {
+            //                   widget.accepted = false;
+            //                 });
+            //                 Navigator.of(context).pop();
+            //               },
+            //               onCancel: () {
+            //                 Navigator.of(context).pop();
+            //               },
+            //             );
+            //           },
+            //         );
+            //       } else {
+            //         setState(() {
+            //           widget.accepted = true;
+            //         });
+            //       }
+            //     },
+            //     padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+            //     child: Text(
+            //       widget.accepted ? 'Accepted' : 'Add',
+            //       style: TextStyle(
+            //         color: widget.accepted ? Colors.green : Colors.blue,
+            //         fontSize: 15,
+            //       ),
+            //     ),
+            //   ),
+            // ),
           ],
         ),
       ),

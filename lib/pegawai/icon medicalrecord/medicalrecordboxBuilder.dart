@@ -3,25 +3,25 @@ import 'medicalrecordBoxWidget.dart';
 
 Widget buildFirstMedicalRecordBox(BuildContext context) {
   return MedicalRecordBox(
-    title: "Health Check Reminder",
+    title: "Friday, 29 March 2024",
     content:
-        "It's time for your annual health checkup. Don't forget to schedule your appointment!",
+        "Blood pressure: 140/90 mmHg\nPulse rate: 108 bpm\nBody temperature: 39°C\nBody weight: 80 kg",
   );
 }
 
-Widget buildSecondMedicalRecordBox(BuildContext context) {
-  return MedicalRecordBox(
-    title: "Checkup Alert",
-    content:
-        "Your health checkup appointment is approaching. Make sure to prepare for it!",
-  );
-}
+// Widget buildSecondMedicalRecordBox(BuildContext context) {
+//   return MedicalRecordBox(
+//     title: "Checkup Alert",
+//     content:
+//         "Your health checkup appointment is approaching. Make sure to prepare for it!",
+//   );
+// }
 
 Widget buildThirdMedicalRecordBox(BuildContext context) {
   return MedicalRecordBox(
-    title: "Check Expired",
+    title: "Tuesday, 26 March 2024",
     content:
-        "You missed your health checkup appointment. Please reschedule it as soon as possible.",
+        "Blood pressure: 120/80 mmHg\nPulse rate: 79 bpm\nBody temperature: 36,5°C\nBody weight: 82 kg",
     accepted: true,
   );
 }
