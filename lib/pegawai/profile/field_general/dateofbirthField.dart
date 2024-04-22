@@ -22,7 +22,7 @@ class _DateOfBirthState extends State<DateOfBirth> {
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(10),
-          border: Border.all(color: Colors.black54),
+          border: Border.all(color: const Color.fromARGB(52, 0, 0, 0)),
         ),
         alignment: Alignment.centerLeft,
         padding: const EdgeInsets.symmetric(horizontal: 10),

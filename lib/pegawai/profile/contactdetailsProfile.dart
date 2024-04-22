@@ -12,42 +12,44 @@ class ContactDetailsProfile extends StatefulWidget {
 class _ContactDetailsProfileState extends State<ContactDetailsProfile> {
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
-      width: double.infinity,
-      decoration: BoxDecoration(
-        color: Colors.grey[300],
-        border: const Border(
-          top: BorderSide(color: Colors.black54),
-          bottom: BorderSide(color: Colors.black54),
+      child: Container(
+        width: double.infinity, // Apply width to the Container
+        padding: const EdgeInsets.symmetric(
+            horizontal: 30, vertical: 10), // Padding for the Container
+        decoration: BoxDecoration(
+          color: Colors.grey[100],
+          borderRadius: BorderRadius.circular(10),
+          border: Border.all(color: const Color.fromARGB(52, 0, 0, 0)),
         ),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Text(
-            'Phone number',
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 15,
-              fontWeight: FontWeight.bold,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text(
+              'Phone number',
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 15,
+                fontWeight: FontWeight.bold,
+              ),
             ),
-          ),
-          const SizedBox(height: 10),
-          buildIdPegawaiField(),
-          const SizedBox(height: 10),
-          const Text(
-            'Email',
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 15,
-              fontWeight: FontWeight.bold,
+            const SizedBox(height: 10),
+            buildIdPegawaiField(),
+            const SizedBox(height: 10),
+            const Text(
+              'Email',
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 15,
+                fontWeight: FontWeight.bold,
+              ),
             ),
-          ),
-          const SizedBox(height: 10),
-          buildFullNameField(),
-          const SizedBox(height: 10),
-        ],
+            const SizedBox(height: 10),
+            buildFullNameField(),
+            const SizedBox(height: 10),
+          ],
+        ),
       ),
     );
   }

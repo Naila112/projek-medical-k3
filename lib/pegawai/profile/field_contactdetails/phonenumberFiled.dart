@@ -7,7 +7,7 @@ Widget buildPhoneNumberField() {
     decoration: BoxDecoration(
       color: Colors.white,
       borderRadius: BorderRadius.circular(10),
-      border: Border.all(color: Colors.black54),
+      border: Border.all(color: const Color.fromARGB(52, 0, 0, 0)),
     ),
     child: TextFormField(
       keyboardType: TextInputType.phone, // Ubah tipe input menjadi phone

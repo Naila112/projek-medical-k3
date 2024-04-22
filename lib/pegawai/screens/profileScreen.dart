@@ -63,7 +63,7 @@ class ProfileScreen extends StatelessWidget {
             ),
           ),
         ),
-        const SizedBox(height: 10), // Jarak antara teks dan box
+        // const SizedBox(height: 10), // Jarak antara teks dan box
         const GeneralProfile(),
       ],
     );
@@ -85,7 +85,7 @@ class ProfileScreen extends StatelessWidget {
             ),
           ),
         ),
-        const SizedBox(height: 10), // Jarak antara teks dan box
+        // const SizedBox(height: 10), // Jarak antara teks dan box
         const ContactDetailsProfile(),
       ],
     );

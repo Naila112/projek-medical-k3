@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-// import 'pegawai/screens/profileScreen.dart';
 import 'pegawai/screens/dashboardScreen.dart';
 // import 'page/HomePage.dart';
 
@@ -21,6 +20,7 @@ class MyApp extends StatelessWidget {
       ),
       routes: {
         // "/": (context) => const HomePage(),
+        // "/": (context) => const LoginPage(),
         "/": (context) => const DashboardScreen(),
         // "/": (context) => const ProfileScreen(),
       },

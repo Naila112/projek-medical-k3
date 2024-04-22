@@ -23,21 +23,16 @@ class _MedicalRecordBoxState extends State<MedicalRecordBox> {
   bool isExpanded = false;
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        setState(() {
-          isExpanded = !isExpanded;
-        });
-      },
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
       child: Container(
-        width: double.infinity,
-        height: 152,
-        padding: const EdgeInsets.fromLTRB(20, 15, 20, 0),
-        decoration: const BoxDecoration(
-          border: Border(
-            bottom: BorderSide(color: Color.fromARGB(52, 0, 0, 0)),
-            top: BorderSide(color: Color.fromARGB(52, 0, 0, 0)),
-          ),
+        width: double.infinity, // Apply width to the Container
+        padding: const EdgeInsets.symmetric(
+            horizontal: 30, vertical: 10), // Padding for the Container
+        decoration: BoxDecoration(
+          color: Colors.grey[100],
+          borderRadius: BorderRadius.circular(10),
+          border: Border.all(color: const Color.fromARGB(52, 0, 0, 0)),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

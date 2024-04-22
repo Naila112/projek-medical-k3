@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:medical_app/pegawai/icon%20medicalrecord/medicalrecordboxBuilder.dart';
 import 'package:medical_app/pegawai/widgets/icon_widget.dart';
 
-class MedicalRecordScreen extends StatelessWidget {
-  const MedicalRecordScreen({super.key});
+class ScheduleCheckUpScreen extends StatelessWidget {
+  const ScheduleCheckUpScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,33 +15,28 @@ class MedicalRecordScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             buildBackIcons(context), // Memuat icon back
-            buildTextMedicalRecord(context), // Memuat text Notification
-            buildFirstMedicalRecordBox(
-                context), // Memuat box notification dengan konten di dalamnya
-            // buildSecondMedicalRecordBox(context), // Memuat box notification dengan konten di dalamnya
-            buildThirdMedicalRecordBox(
-                context), // Memuat box notification dengan konten di dalamnya
+            buildTextScheduleCheckUp(context), // Memuat text Notification
           ],
         ),
       ),
     );
   }
 
-  // Memuat text Medical Record
-  Widget buildTextMedicalRecord(context) {
+  // Memuat text Schedule Check-Up
+  Widget buildTextScheduleCheckUp(context) {
     return Container(
       padding: const EdgeInsets.fromLTRB(40, 25, 40, 25),
       child: const Row(
         children: [
           Text(
-            'Medical Record',
+            'Schedule Check-Up',
             style: TextStyle(
               color: Colors.black,
               fontSize: 20,
               fontWeight: FontWeight.bold,
             ),
           ),
-          // SizedBox(height: 50)
+          SizedBox(height: 50)
           // Tambahkan widget lainnya di sini sesuai kebutuhan
         ],
       ),

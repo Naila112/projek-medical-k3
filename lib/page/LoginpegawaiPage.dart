@@ -25,6 +25,7 @@ class _LoginPageState extends State<LoginPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             buildBackIcons(context), // Menampilkan tombol kembali
+            // const SizedBox(height: 50),
             buildLoginForm(),
           ],
         ),
