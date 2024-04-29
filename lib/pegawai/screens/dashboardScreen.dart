@@ -5,10 +5,9 @@ import 'package:medical_app/pegawai/widgets/date_widgets.dart';
 import 'package:medical_app/pegawai/widgets/greeting_widget.dart';
 
 import 'medicalrecordScreen.dart';
-import 'schedulecheckupScreen.dart';
 
 class DashboardScreen extends StatelessWidget {
-  const DashboardScreen({Key? key});
+  const DashboardScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -56,20 +55,20 @@ class DashboardScreen extends StatelessWidget {
               );
             },
           ),
-          // const SizedBox(height: 5), // Tambahkan sedikit ruang antara box
-          buildContentBox(
-            context,
-            'Schedule Check-Up',
-            'calendar-plus.png',
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const ScheduleCheckUpScreen(),
-                ),
-              );
-            },
-          ),
+          // // const SizedBox(height: 5), // Tambahkan sedikit ruang antara box
+          // buildContentBox(
+          //   context,
+          //   'Schedule Check-Up',
+          //   'calendar-plus.png',
+          //   onPressed: () {
+          //     Navigator.push(
+          //       context,
+          //       MaterialPageRoute(
+          //         builder: (context) => const ScheduleCheckUpScreen(),
+          //       ),
+          //     );
+          //   },
+          // ),
           // const SizedBox(height: 5), // Tambahkan sedikit ruang antara box
           buildContentBox(
             context,
@@ -84,7 +83,7 @@ class DashboardScreen extends StatelessWidget {
               );
             },
           ),
-          const SizedBox(height: 20), // Memuat box pemisah
+          const SizedBox(height: 100), // Memuat box pemisah
         ],
       ),
     );

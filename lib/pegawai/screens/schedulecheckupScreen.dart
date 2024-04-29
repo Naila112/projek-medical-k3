@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:medical_app/pegawai/icon%20medicalrecord/medicalrecordboxBuilder.dart';
 import 'package:medical_app/pegawai/widgets/icon_widget.dart';
 
 class ScheduleCheckUpScreen extends StatelessWidget {

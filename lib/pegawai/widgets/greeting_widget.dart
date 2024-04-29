@@ -18,7 +18,7 @@ Widget buildGreetingBox(BuildContext context, String username) {
 
   // Kembalikan widget yang akan ditampilkan
   return Container(
-    padding: const EdgeInsets.fromLTRB(40, 40, 40, 0),
+    padding: const EdgeInsets.fromLTRB(40, 20, 40, 0),
     width: double.infinity,
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -36,10 +36,10 @@ Widget buildGreetingBox(BuildContext context, String username) {
             ),
             IconButton(
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const MenuScreen()),
-                );
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(builder: (context) => const MenuScreen()),
+                // );
               },
               icon: const Icon(
                 Icons.menu,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:medical_app/pegawai/screens/profileScreen.dart';
-import 'package:medical_app/pegawai/widgets/icon_widget.dart';
+import 'package:medical_app/pegawai/screens/dashboardScreen.dart';
+import 'package:medical_app/pegawai/screens/modifyScreen.dart';
 
 class DataKaryawanScreen extends StatelessWidget {
   const DataKaryawanScreen({super.key});
@@ -8,111 +8,98 @@ class DataKaryawanScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
-      backgroundColor: Colors.white,
+      appBar: AppBar(
+        title: const Text('Data Pegawai'),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const DashboardScreen(),
+              ),
+            );
+          },
+        ),
+      ),
       body: SingleChildScrollView(
+        padding: const EdgeInsets.all(20),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            buildBackIcons(context), // Memuat icon back
-            buildDataKaryawan(context), // Memuat text Profile
-            const SizedBox(height: 20), // Tambahkan jarak antara teks dan kotak
-            buildDataBox(context), // Memuat kotak data karyawan
-            buildModify(context),
+            _buildSectionTitle('General'),
+            const SizedBox(height: 20),
+            _buildTextField('Full Name', text: 'Naila'),
+            _buildTextField('ID Number', text: '123456'),
+            _buildTextField('Date of Birth', text: '07/07/2007'),
+            _buildTextField('Gender', text: 'Perempuan'),
+            _buildTextField('City/District', text: 'Lhokseumawe'),
+            const SizedBox(height: 30),
+            _buildSectionTitle('Contact Details'),
+            const SizedBox(height: 20),
+            _buildTextField('Phone Number', text: '089523355346'),
+            _buildTextField('Email', text: 'naila@gmail.com'),
+            const SizedBox(height: 0),
+            _buildSubmitButton(context),
           ],
         ),
       ),
     );
   }
 
-  // Memuat text Profile
-  Widget buildDataKaryawan(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.fromLTRB(50, 30, 0, 0),
-      child: Text(
-        'Data Karyawan',
-        style: TextStyle(
-          color: Colors.black,
-          fontSize: 20,
-          fontWeight: FontWeight.bold,
-        ),
-      ),
+  Widget _buildSectionTitle(String title) {
+    return Text(
+      title,
+      style: const TextStyle(
+          fontSize: 20, fontWeight: FontWeight.bold, color: Colors.blue),
     );
   }
 
-  // Memuat kotak data karyawan
-  Widget buildDataBox(BuildContext context) {
+  Widget _buildTextField(String label, {required String text}) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          label,
+          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+        ),
+        const SizedBox(height: 8),
+        Container(
+          width: double.infinity,
+          decoration: BoxDecoration(
+            color: Colors.grey[200],
+            borderRadius: BorderRadius.circular(10),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: Text(
+              text,
+              style: const TextStyle(fontSize: 16),
+            ),
+          ),
+        ),
+        const SizedBox(height: 20),
+      ],
+    );
+  }
+
+  // Fungsi untuk membuat tombol "Modify" dan menavigasi ke ProfileScreen
+  Widget _buildSubmitButton(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
-      child: Container(
-        width: double.infinity, // Apply width to the Container
-        padding: const EdgeInsets.symmetric(
-            horizontal: 30, vertical: 10), // Padding for the Container
-        decoration: BoxDecoration(
-          color: Colors.grey[100],
-          borderRadius: BorderRadius.circular(10),
-          border: Border.all(color: const Color.fromARGB(52, 0, 0, 0)),
-        ),
-        child: const Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(height: 10),
-            Text(
-              'Name',
-              style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-            ),
-            Text('Naila'),
-            Text(
-              'ID Pegawai',
-              style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-            ),
-            Text('-'), // Replace with actual ID
-            Text(
-              'Date of Birth',
-              style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-            ),
-            Text('July 7, 2007'),
-            Text(
-              'Gender',
-              style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-            ),
-            Text('Female'),
-            Text(
-              'Phone Number',
-              style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-            ),
-            Text('0813202212110'),
-            Text(
-              'Email',
-              style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-            ),
-            Text('naila@gmail.com'),
-            SizedBox(height: 10),
-          ],
-        ),
-      ),
-    );
-  }
-
-  // Modify text
-  Widget buildModify(BuildContext context) {
-    return MaterialButton(
-      onPressed: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const ProfileScreen(),
-          ),
-        );
-      },
-      child: const Center(
-        child: Text(
+      padding: const EdgeInsets.only(bottom: 150),
+      child: TextButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) =>
+                    const ModifyScreen()), // Panggil ProfileScreen saat tombol ditekan
+          );
+        },
+        child: const Text(
           'Modify',
-          style: TextStyle(
-            color: Colors.grey,
-            fontSize: 15,
-            fontWeight: FontWeight.normal,
-          ),
+          style: TextStyle(fontSize: 18, color: Colors.black54),
         ),
       ),
     );

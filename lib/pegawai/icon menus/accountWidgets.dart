@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:medical_app/nav/navigator.dart';
-import 'package:medical_app/pegawai/screens/profileScreen.dart';
+import 'package:medical_app/pegawai/profile/datakaryawanScreen.dart';
+import 'package:medical_app/pegawai/screens/modifyScreen.dart';
 
 // Memuat text account
 Widget buildTextAccount(context) {
@@ -29,7 +30,7 @@ Widget buildAccountInfo(BuildContext context) {
       // Navigasi ke halaman profil ketika bagian mana pun dari widget diklik
       PageNavigator.slideLeftToPage(
         context,
-        const ProfileScreen(),
+        const DataKaryawanScreen(),
       );
     },
     child: Container(

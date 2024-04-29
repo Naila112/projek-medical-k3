@@ -4,25 +4,39 @@ import 'package:medical_app/pegawai/icon%20menus/medicalrecordWidget.dart';
 import 'package:medical_app/pegawai/icon%20menus/logoutWidget.dart';
 import 'package:medical_app/pegawai/widgets/icon_widget.dart';
 
+import 'dashboardScreen.dart';
+
 class MenuScreen extends StatelessWidget {
   const MenuScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
-      backgroundColor: Colors.white,
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            buildContentBox(context),
-            const SizedBox(height: 20),
-            buildTextSettings(context), // Memuat text setting
-            buildMedicalRecord(
-                context), // Memuat widget untuk menampilkan history
-            buildLogOut(context), // Memuat widget untuk menampilkan log put
-          ],
+      appBar: AppBar(
+        title: const Text('Menu'),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const DashboardScreen(),
+              ),
+            );
+          },
+        ),
+        backgroundColor:
+            const Color(0xFFB0C3FF), // Menambahkan warna pada appBar
+      ),
+      body: Container(
+        width: double.infinity,
+        height: 270,
+        decoration: const BoxDecoration(
+          color: Color(0xFFB0C3FF),
+          borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(50),
+            bottomRight: Radius.circular(50),
+          ),
         ),
       ),
     );

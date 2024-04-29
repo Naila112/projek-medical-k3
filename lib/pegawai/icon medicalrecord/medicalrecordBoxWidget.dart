@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:medical_app/pegawai/dialogs/alertDialog.dart';
 
 // ignore: must_be_immutable
 class MedicalRecordBox extends StatefulWidget {
@@ -24,15 +22,14 @@ class _MedicalRecordBoxState extends State<MedicalRecordBox> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 10),
       child: Container(
-        width: double.infinity, // Apply width to the Container
-        padding: const EdgeInsets.symmetric(
-            horizontal: 30, vertical: 10), // Padding for the Container
+        width: double.infinity,
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         decoration: BoxDecoration(
           color: Colors.grey[100],
           borderRadius: BorderRadius.circular(10),
-          border: Border.all(color: const Color.fromARGB(52, 0, 0, 0)),
+          // border: Border.all(color: const Color.fromARGB(52, 0, 0, 0)),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
