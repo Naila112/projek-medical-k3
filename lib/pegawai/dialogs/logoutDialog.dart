@@ -10,7 +10,7 @@ class LogOutDialog extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(20.0),
       ),
-      backgroundColor: Colors.white,
+      // backgroundColor: Colors.white,
       title: const Text(
         'Konfirmasi Log Out',
         style: TextStyle(

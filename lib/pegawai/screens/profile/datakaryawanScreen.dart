@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:medical_app/pegawai/screens/modifyScreen.dart';
+import 'package:medical_app/pegawai/screens/profile/datakaryawanBuild/ProfileAvatar.dart';
+import 'package:medical_app/pegawai/screens/profile/datakaryawanBuild/SectionTitle.dart';
+import 'package:medical_app/pegawai/screens/profile/datakaryawanBuild/TextField.dart';
+import 'package:medical_app/pegawai/screens/profile/modifyScreen.dart';
 
 class DataKaryawanScreen extends StatefulWidget {
   const DataKaryawanScreen({super.key});
@@ -21,7 +24,9 @@ class _DataKaryawanScreenState extends State<DataKaryawanScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Data Pegawai'),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        title: const Text('Data Karyawan'),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
@@ -34,73 +39,29 @@ class _DataKaryawanScreenState extends State<DataKaryawanScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            _buildProfileAvatar(),
+            buildProfileAvatar(),
             const SizedBox(height: 20),
-            _buildSectionTitle('General'),
+            buildSectionTitle('General'),
             const SizedBox(height: 20),
-            _buildTextField('Full Name', text: _fullName),
-            _buildTextField('ID Number', text: _idNumber),
-            _buildTextField('Date of Birth', text: _dateOfBirth),
-            _buildTextField('Gender', text: _gender),
-            _buildTextField('City/District', text: _city),
+            buildTextField('Full Name', text: _fullName),
+            buildTextField('ID Number', text: _idNumber),
+            buildTextField('Date of Birth', text: _dateOfBirth),
+            buildTextField('Gender', text: _gender),
+            buildTextField('City/District', text: _city),
             const SizedBox(height: 30),
-            _buildSectionTitle('Contact Details'),
+            buildSectionTitle('Contact Details'),
             const SizedBox(height: 20),
-            _buildTextField('Phone Number', text: _phoneNumber),
-            _buildTextField('Email', text: _email),
+            buildTextField('Phone Number', text: _phoneNumber),
+            buildTextField('Email', text: _email),
             const SizedBox(height: 0),
-            _buildSubmitButton(context),
+            buildSubmitButton(context),
           ],
         ),
       ),
     );
   }
 
-  Widget _buildProfileAvatar() {
-    return const CircleAvatar(
-      radius: 50,
-      backgroundImage: AssetImage('assets/images/profile_picture.jpg'),
-    );
-  }
-
-  Widget _buildSectionTitle(String title) {
-    return Text(
-      title,
-      style: const TextStyle(
-          fontSize: 18, fontWeight: FontWeight.bold, color: Colors.blue),
-    );
-  }
-
-  Widget _buildTextField(String label, {required String text}) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          label,
-          style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-        ),
-        const SizedBox(height: 8),
-        Container(
-          width: double.infinity,
-          decoration: BoxDecoration(
-            color: Colors.grey[200],
-            borderRadius: BorderRadius.circular(10),
-          ),
-          child: Padding(
-            padding: const EdgeInsets.all(12.0),
-            child: Text(
-              text,
-              style: const TextStyle(fontSize: 16),
-            ),
-          ),
-        ),
-        const SizedBox(height: 20),
-      ],
-    );
-  }
-
-  Widget _buildSubmitButton(BuildContext context) {
+  Widget buildSubmitButton(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 150),
       child: TextButton(

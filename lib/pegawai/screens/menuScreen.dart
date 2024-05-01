@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:medical_app/pegawai/icon%20menus/accountWidgets.dart';
-import 'package:medical_app/pegawai/icon%20menus/medicalrecordWidget.dart';
-import 'package:medical_app/pegawai/icon%20menus/logoutWidget.dart';
 import 'package:medical_app/pegawai/widgets/icon_widget.dart';
 
 import 'dashboardScreen.dart';

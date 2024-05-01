@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:medical_app/nav/navigator.dart';
-import 'package:medical_app/pegawai/profile/datakaryawanScreen.dart';
-import 'package:medical_app/pegawai/screens/modifyScreen.dart';
+import 'package:medical_app/pegawai/screens/profile/datakaryawanScreen.dart';
+import 'package:medical_app/pegawai/screens/profile/modifyScreen.dart';
 
 // Memuat text account
 Widget buildTextAccount(context) {

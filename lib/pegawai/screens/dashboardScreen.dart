@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:medical_app/pegawai/profile/datakaryawanScreen.dart';
+import 'package:medical_app/pegawai/screens/profile/datakaryawanScreen.dart';
 import 'package:medical_app/pegawai/widgets/date_widgets.dart';
 import 'package:medical_app/pegawai/widgets/greeting_widget.dart';
 
@@ -50,7 +50,7 @@ class DashboardScreen extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => DataKaryawanScreen(),
+                  builder: (context) => const DataKaryawanScreen(),
                 ),
               );
             },
