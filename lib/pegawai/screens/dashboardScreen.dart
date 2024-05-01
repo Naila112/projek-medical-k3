@@ -50,7 +50,7 @@ class DashboardScreen extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const DataKaryawanScreen(),
+                  builder: (context) => DataKaryawanScreen(),
                 ),
               );
             },

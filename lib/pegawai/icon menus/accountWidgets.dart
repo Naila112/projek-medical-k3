@@ -30,7 +30,7 @@ Widget buildAccountInfo(BuildContext context) {
       // Navigasi ke halaman profil ketika bagian mana pun dari widget diklik
       PageNavigator.slideLeftToPage(
         context,
-        const DataKaryawanScreen(),
+        DataKaryawanScreen(),
       );
     },
     child: Container(

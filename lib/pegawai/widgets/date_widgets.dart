@@ -3,14 +3,31 @@ import 'package:intl/intl.dart';
 
 Widget buildDateSection(BuildContext context) {
   DateTime now = DateTime.now();
-  DateTime firstDayOfMonth =
-      DateTime(now.year, now.month, now.day - now.weekday + 1);
-  List<String> daysInEnglish = [];
+
+  // Atur tanggal dari tanggal 1 sampai akhir bulan Mei
+  DateTime firstDayOfMonth = DateTime.utc(now.year, now.month, 1);
+  DateTime lastDayOfMonth = DateTime.utc(now.year, now.month + 1, 0);
+
+  // Atur hari-hari dalam seminggu dalam bahasa Inggris
+  List<String> daysInEnglish = [
+    'Mon',
+    'Tue',
+    'Wed',
+    'Thu',
+    'Fri',
+    'Sat',
+    'Sun'
+  ];
   List<int> daysOfMonth = [];
-  for (int i = 1; i <= 7; i++) {
-    daysOfMonth.add(firstDayOfMonth.day + i - 1);
-    DateTime currentDay = firstDayOfMonth.add(Duration(days: i - 1));
-    daysInEnglish.add(DateFormat('E').format(currentDay));
+
+  // Loop untuk mengisi tanggal dan hari-hari
+  for (int i = 0; i < 7; i++) {
+    DateTime currentDate = firstDayOfMonth.add(Duration(days: i));
+    if (currentDate.isBefore(lastDayOfMonth)) {
+      daysOfMonth.add(currentDate.day);
+    } else {
+      daysOfMonth.add(0);
+    }
   }
 
   return Padding(
@@ -29,20 +46,6 @@ Widget buildDateSection(BuildContext context) {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            // CupertinoButton(
-            //   onPressed: () {
-            //     Navigator.push(
-            //       context,
-            //       MaterialPageRoute(
-            //           builder: (context) => const CalendarScreen()),
-            //     );
-            //   },
-            //   child: const Icon(
-            //     Icons.arrow_drop_down,
-            //     size: 30,
-            //     color: Colors.black,
-            //   ),
-            // ),
           ],
         ),
         const SizedBox(height: 70),

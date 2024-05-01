@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medical_app/pegawai/screens/menuScreen.dart';
+import 'package:medical_app/pegawai/screens/profileScreen.dart';
 
 Widget buildGreetingBox(BuildContext context, String username) {
   // Mendapatkan waktu saat ini
@@ -36,10 +36,20 @@ Widget buildGreetingBox(BuildContext context, String username) {
             ),
             IconButton(
               onPressed: () {
-                // Navigator.push(
-                //   context,
-                //   MaterialPageRoute(builder: (context) => const MenuScreen()),
-                // );
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ProfileScreen(
+                      fullName: 'Naila',
+                      idNumber: '123456',
+                      dateOfBirth: '07/07/2007',
+                      gender: 'Perempuan',
+                      city: 'Lhokseumawe',
+                      phoneNumber: '081234567891',
+                      email: 'naila@gmail.com',
+                    ),
+                  ),
+                );
               },
               icon: const Icon(
                 Icons.menu,
