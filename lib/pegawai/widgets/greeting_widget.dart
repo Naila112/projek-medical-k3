@@ -39,7 +39,7 @@ Widget buildGreetingBox(BuildContext context, String username) {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => ProfileScreen(
+                    builder: (context) => const ProfileScreen(
                       fullName: 'Naila',
                       idNumber: '123456',
                       dateOfBirth: '07/07/2007',

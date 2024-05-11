@@ -1,6 +1,7 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:medical_app/page/LoginpegawaiPage.dart';
+import 'package:medical_app/page/SignupPage.dart';
 // import 'SignupPage.dart';
 
 class HomePage extends StatelessWidget {
@@ -92,40 +93,40 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 20),
-                    // FadeInUp(
-                    //   duration: const Duration(milliseconds: 1600),
-                    //   child: Container(
-                    //     // padding: const EdgeInsets.only(top: 3, left: 3),
-                    //     decoration: BoxDecoration(
-                    //       borderRadius: BorderRadius.circular(50),
-                    //       border: Border.all(color: Colors.black),
-                    //     ),
-                    //     child: MaterialButton(
-                    //       minWidth: double.infinity,
-                    //       height: 60,
-                    //       onPressed: () {
-                    //         Navigator.push(
-                    //           context,
-                    //           MaterialPageRoute(
-                    //             builder: (context) => const SignupPage(),
-                    //           ),
-                    //         );
-                    //       },
-                    //       color: const Color(0xFFB0C3FF),
-                    //       elevation: 0,
-                    //       shape: RoundedRectangleBorder(
-                    //         borderRadius: BorderRadius.circular(50),
-                    //       ),
-                    //       child: const Text(
-                    //         "Sign up",
-                    //         style: TextStyle(
-                    //           fontWeight: FontWeight.w600,
-                    //           fontSize: 18,
-                    //         ),
-                    //       ),
-                    //     ),
-                    //   ),
-                    // ),
+                    FadeInUp(
+                      duration: const Duration(milliseconds: 1600),
+                      child: Container(
+                        // padding: const EdgeInsets.only(top: 3, left: 3),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(50),
+                          border: Border.all(color: Colors.black),
+                        ),
+                        child: MaterialButton(
+                          minWidth: double.infinity,
+                          height: 60,
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const SignupPage(),
+                              ),
+                            );
+                          },
+                          color: const Color(0xFFB0C3FF),
+                          elevation: 0,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(50),
+                          ),
+                          child: const Text(
+                            "Sign up",
+                            style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                              fontSize: 18,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
                   ],
                 ),
                 const SizedBox(height: 20),
